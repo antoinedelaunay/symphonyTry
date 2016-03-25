@@ -1,0 +1,6 @@
+{% set var = '<h1>Hello Toto</h1>' %}
+{% autoescape false %}
+    {# dans cette partie du template les variables ne sont pas échappées #}
+    {{ var }}
+    {{ var | escape('html') }}
+{% endautoescape %}

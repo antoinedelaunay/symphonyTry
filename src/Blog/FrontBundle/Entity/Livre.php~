@@ -1,0 +1,171 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+namespace Blog\FrontBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * Description of Livre
+ *
+ * @author adelaunay2015
+ * @ORM\Entity
+ * @ORM\Table(name="livres", indexes={@ORM\Index(name="IDX_LIVRE_TITRE",columns={"titre"})},
+ * uniqueConstraints={@ORM\UniqueConstraint(name="UQ_TITRE_DATE", columns={"titre", "date_Parution"})},
+ * )
+ */
+class Livre {
+
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     */
+    private $id;
+    /**
+     * @ORM\Column(type="string", length=150)
+     */
+    private $titre;
+    /**
+     * @ORM\Column(name="date_Parution", type="date", nullable=true)
+     */
+    private $dateParution;
+    
+    /**
+     *
+     * @var \Blog\FrontBundle\Entity\Categorie
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="livres")
+     * @ORM\JoinColumn(onDelete="CASCADE") 
+     */
+    private $categorie;
+    
+    
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Auteur", inversedBy="livres")
+     */
+    private $auteurs;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     * @return Livre
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string 
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * Set dateParution
+     *
+     * @param \DateTime $dateParution
+     * @return Livre
+     */
+    public function setDateParution($dateParution)
+    {
+        $this->dateParution = $dateParution;
+
+        return $this;
+    }
+
+    /**
+     * Get dateParution
+     *
+     * @return \DateTime 
+     */
+    public function getDateParution()
+    {
+        return $this->dateParution;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \Blog\FrontBundle\Entity\Categorie $categorie
+     * @return Livre
+     */
+    public function setCategorie(\Blog\FrontBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \Blog\FrontBundle\Entity\Categorie 
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->auteurs = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add auteurs
+     *
+     * @param \Blog\FrontBundle\Entity\Auteur $auteurs
+     * @return Livre
+     */
+    public function addAuteur(\Blog\FrontBundle\Entity\Auteur $auteurs)
+    {
+        $this->auteurs[] = $auteurs;
+
+        return $this;
+    }
+
+    /**
+     * Remove auteurs
+     *
+     * @param \Blog\FrontBundle\Entity\Auteur $auteurs
+     */
+    public function removeAuteur(\Blog\FrontBundle\Entity\Auteur $auteurs)
+    {
+        $this->auteurs->removeElement($auteurs);
+    }
+
+    /**
+     * Get auteurs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAuteurs()
+    {
+        return $this->auteurs;
+    }
+}

@@ -1,0 +1,64 @@
+{#{% extends "::general.html.twig" %}#}
+{% extends "::generalMaterial.html.twig" %}
+
+{% block title %}
+    admin Form Material
+{% endblock %}
+
+{% block header %}
+    {% include 'FrontBundle:header:headerMaterial.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'FrontBundle:footer:footerMaterial.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/front/jsMaterial.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/front/konamiCode.js') }}"></script>
+{% endblock %}
+
+{% block link %}
+    <link rel="shortcut icon" type="image/x-icon" href="https://lc.cx/4WK8" />
+    <link rel="stylesheet" href="{{ asset('bundles/front/cssMaterial.css') }}">
+{% endblock %}
+
+{% block body %}
+        <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="http://img0.gtsstatic.com/wallpapers/8d4c9b462ad6f4963652a93e9bc1529d_large.jpeg"> <!-- random image -->
+                <div class="caption center-align">
+                   <!-- <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>-->
+                </div>
+            </li>
+            <li>
+                <img src="http://img0.gtsstatic.com/wallpapers/ae8a424f10833e725ccd6f0169d5df08_large.jpeg"> <!-- random image -->
+                <div class="caption left-align">
+                    <!--<h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>-->
+                </div>
+            </li>
+            <li>
+                <img src="http://img0.gtsstatic.com/wallpapers/cf11babb0b878e980d0eefa51a328e5c_large.jpeg"> <!-- random image -->
+                <div class="caption right-align">
+                    <!--<h3>Right Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>-->
+                </div>
+            </li>
+            <li>
+                <img src="http://img0.gtsstatic.com/wallpapers/c91c1c3b8344bc496ed11f68b6bf7fdc_large.jpeg"> <!-- random image -->
+                <div class="caption center-align">
+                    <!--<h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>-->
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        {{form(form)}}
+    </div>
+
+{% endblock %}

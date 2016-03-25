@@ -1,0 +1,43 @@
+{#{% extends "::general.html.twig" %}#}
+{% extends "::generalMaterial.html.twig" %}
+
+{% block title %}
+    admin Form Material
+{% endblock %}
+
+{% block header %}
+    {% include 'FrontBundle:header:headerMaterial.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'FrontBundle:footer:footerMaterial.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/front/jsMaterial.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/front/konamiCode.js') }}"></script>
+{% endblock %}
+
+{% block link %}
+    <link rel="shortcut icon" type="image/x-icon" href="https://lc.cx/4WK8" />
+    <link rel="stylesheet" href="{{ asset('bundles/front/cssMaterial.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src="http://img0.gtsstatic.com/wallpapers/e358204406911a391db619da3ba445f9_large.jpeg"></a>
+        <a class="carousel-item" href="#two!"><img src="http://img0.gtsstatic.com/wallpapers/b64903b61ed5c0280455250b2ef77a6a_large.jpeg"></a>
+        <a class="carousel-item" href="#three!"><img src="http://img1.gtsstatic.com/wallpapers/27f1be259ed28c8473f8cda66d61e9d9_large.jpeg"></a>
+        <a class="carousel-item" href="#four!"><img src="http://img1.gtsstatic.com/wallpapers/3070595cc11aa075d22f38d05745eef3_large.jpeg"></a>
+        <a class="carousel-item" href="#five!"><img src="http://img0.gtsstatic.com/wallpapers/ad4efec8fae9d529e5b873261f9fef43_large.jpeg"></a>
+        <a class="carousel-item" href="#six!"><img src="http://img0.gtsstatic.com/wallpapers/f6e1cee13bdae54cd2f783e16eb82346_large.jpeg"></a>
+        <a class="carousel-item" href="#seven!"><img src="http://img1.gtsstatic.com/wallpapers/019843207484886289f1dc2cc593240a_large.jpeg"></a>
+        <a class="carousel-item" href="#eight!"><img src="http://img0.gtsstatic.com/wallpapers/02914c4947bb0571d3e3f9d547d1cc94_large.jpeg"></a>
+        <a class="carousel-item" href="#neine!"><img src="http://img1.gtsstatic.com/wallpapers/7afe802b41d5456527257ddae6d08318_large.jpeg"></a>
+    </div>
+
+    <div class="container">
+        {{form(form)}}
+    </div>
+
+{% endblock %}

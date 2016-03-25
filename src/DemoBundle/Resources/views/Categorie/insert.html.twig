@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Nouvelle catégorie
+{%endblock%}
+
+{% block stylesheets %}
+    <link href='{{asset('bundles/demo/css/eni.css')}}' rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+ 
+   {% form_theme maform 'DemoBundle::form.html.twig' %} {#associer le ème à l'objet formulaire maform #}
+   
+   {{form_start(maform, {'attr':{'novalidate':'novalidate'}}) }}
+   {{form_row(maform.libelle)}}
+   <div>
+       {{form_widget(maform.ajouterCategorie)}}
+   </div>
+   {{form_end(maform)}}
+{% endblock %}

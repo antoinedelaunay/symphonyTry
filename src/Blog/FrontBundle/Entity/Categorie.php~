@@ -1,0 +1,111 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+namespace Blog\FrontBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Description of Categorie
+ *
+ * @author adelaunay2015
+ * @ORM\Entity(repositoryClass="Blog\FrontBundle\Entity\Repository")
+ * @ORM\Table(name="Categories")
+ */
+class Categorie {
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     */
+    private $id;
+    
+    /**
+     * @ORM\Column(name="libelle", length=150)
+     */
+    private $libelle;
+    
+    /**
+     * @var type
+     * @ORM\OneToMany(targetEntity="Livre", mappedBy="categorie")
+     */
+    private $livres;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->livres = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set libelle
+     *
+     * @param string $libelle
+     * @return Categorie
+     */
+    public function setLibelle($libelle)
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    /**
+     * Get libelle
+     *
+     * @return string 
+     */
+    public function getLibelle()
+    {
+        return $this->libelle;
+    }
+
+    /**
+     * Add livres
+     *
+     * @param \Blog\FrontBundle\Entity\Livre $livres
+     * @return Categorie
+     */
+    public function addLivre(\Blog\FrontBundle\Entity\Livre $livres)
+    {
+        $this->livres[] = $livres;
+
+        return $this;
+    }
+
+    /**
+     * Remove livres
+     *
+     * @param \Blog\FrontBundle\Entity\Livre $livres
+     */
+    public function removeLivre(\Blog\FrontBundle\Entity\Livre $livres)
+    {
+        $this->livres->removeElement($livres);
+    }
+
+    /**
+     * Get livres
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLivres()
+    {
+        return $this->livres;
+    }
+}

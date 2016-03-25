@@ -1,0 +1,24 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Ajouter un livre
+{%endblock%}
+
+{% block stylesheets %}
+    <link href='{{asset('bundles/demo/css/eni.css')}}' rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+   {#{{ form(maform, {'attr':{'novalidate':'novalidate'}})}}#}
+   
+   {% form_theme maform 'DemoBundle::form.html.twig' %} {#associer le ème à l'objet formulaire maform #}
+   
+   {{form_start(maform, {'attr':{'novalidate':'novalidate'}}) }}
+   {{form_row(maform.titre)}}
+   {{form_row(maform.dateParution)}}
+   {{form_row(maform.categorie)}}
+   <div>
+       {{form_widget(maform.ajouter)}} {{form_widget(maform.sauverEtAjouter)}}
+   </div>
+   {{form_end(maform)}}
+{% endblock %}

@@ -1,0 +1,26 @@
+{#{% extends "::general.html.twig" %}#}
+{% extends "::general.html.twig" %}
+{% block body %}
+    <h1> Bienvenue {{titre}}</h1>
+    {#{{dump(table)}}#} <table style="width:100%">
+        <tr>
+            <th>Titre</th>
+            <th>auteur</th> 
+            <th>date</th> 
+            <th>contenu texte</th>
+        </tr>
+        {% for pos,article in articles %}
+
+            <tr>
+                <td>{{article.getTitre()|title}}</td>
+                <td>{{article.getAuteur()|upper}}</td>
+                <td>{{article.getDate()|capitalize}}</td>                
+                <td>{{article.getContenu_texte()|escape('html')}}</td>
+            </tr>
+        {% else %}
+            <p> le tableau est vide, on ne l'affiche pas </p>
+        {% endfor %}
+        
+
+    </table> 
+{% endblock %}

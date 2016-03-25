@@ -1,0 +1,47 @@
+#demo_toto:
+#    path: /toto
+#    defaults: {_controller: DemoBundle:Default:toto }
+#
+#demo_param:
+#    path: /hello/{name}
+#    defaults: {_controller: DemoBundle:Default:hello }
+#    requirements:
+#        _method: GET
+#        #name: toto|albert
+#    
+#demo_redir:
+#    path: /redir/{name}
+#    defaults: {_controller: DemoBundle:Default:redirect }
+#
+#demo_forward:
+#    path: /forward/{name}
+#    defaults: {_controller: DemoBundle:Default:forward }
+#    
+#livre_add:
+#    path: /livre/add
+#    defaults: {_controller: DemoBundle:Livre:add }
+#
+#livre_edit:
+#    path: /livre/edit/{id}
+#    defaults: {_controller: DemoBundle:Livre:edit }
+#
+#livre_remove:
+#    path: /livre/remove/{id}
+#    defaults: {_controller: DemoBundle:Livre:delete }
+#
+#livre_index:
+#    path: /
+#    defaults: {_controller: DemoBundle:Livre:index }
+#
+#cat_add:
+#    path: /cat/add/{libelle}
+#    defaults: {_controller: DemoBundle:Categ:add }
+#
+#cat_del:
+#    path: /cat/remove/{id}
+#    defaults: {_controller: DemoBundle:Categ:remove }
+#    
+#cat_insert:
+#    path: /cat/insert
+#    defaults: {_controller: DemoBundle:Categ:insert }
+#  

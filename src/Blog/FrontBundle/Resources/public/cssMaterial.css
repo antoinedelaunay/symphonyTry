@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+nav{
+    background-color: #DF66AC;
+}
+
+footer.page-footer{
+    background-color: #DF66AC;
+}
+
+a.nolink{
+    color: black;
+    text-decoration: none; /* no underline */
+}

@@ -1,0 +1,29 @@
+{# Commentaire Twig #}
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {%include 'DemoBundle:Default:fragment.html.twig' %}
+{% endblock %}
+
+
+{% block body2 %}
+    {% for position,personne in noms %}
+        {{position}} : Bonjour <strong>{{personne}}</strong> ! <br>
+    {% endfor %}
+    <br>
+    
+    {{ dump(noms) }}
+    
+    <br>
+    
+    <a href={{url('demo_homepage')}}>Accueil</a>
+{% endblock %}
+
+
+{% block title %}
+    {{ parent() }} {{ titre }}
+{%endblock%}
+
+{% block stylesheets %}
+    <link href='{{asset('bundles/demo/css/eni.css')}}' rel="stylesheet" type="text/css" />
+{% endblock %}

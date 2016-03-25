@@ -1,0 +1,91 @@
+{#{% extends "::general.html.twig" %}#}
+{% extends "::generalMaterial.html.twig" %}
+
+{% block title %}
+    Formulaire
+{% endblock %}
+
+{% block header %}
+    {% include 'FrontBundle:header:headerMaterial.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'FrontBundle:footer:footerMaterial.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/front/jsMaterial.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/front/konamiCode.js') }}"></script>
+{% endblock %}
+
+{% block link %}
+    <link rel="shortcut icon" type="image/x-icon" href="https://lc.cx/4WK8" />
+    <link rel="stylesheet" href="{{ asset('bundles/front/cssMaterial.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h3> formulaire</h3>
+        <br>
+        <div class="row">
+            <div class="col s12">
+                <blockquote>
+                    Formulaire créé dans le but d'ajouter des éléments en base de donnée.
+                </blockquote>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m6 s12">
+                Paphius quin etiam et Cornelius senatores, ambo venenorum artibus pravis se polluisse confessi, eodem pronuntiante Maximino sunt interfecti. pari sorte etiam procurator monetae extinctus est. Sericum enim et Asbolium supra dictos, quoniam cum hortaretur passim nominare, quos vellent, adiecta religione firmarat, nullum igni vel ferro se puniri iussurum, plumbi validis ictibus interemit. et post hoe flammis Campensem aruspicem dedit, in negotio eius nullo sacramento constrictus.
+                <br>
+                Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.
+            </div>
+
+            <div class="col m6 s12">
+                Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi. De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus, quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.
+                </br>
+                Ego vero sic intellego, Patres conscripti, nos hoc tempore in provinciis decernendis perpetuae pacis habere oportere rationem. Nam quis hoc non sentit omnia alia esse nobis vacua ab omni periculo atque etiam suspicione belli?
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <i class="material-icons prefix">label</i>
+                        <input id="Titre" type="text" class="validate">
+                        <label for="first_name">Titre</label>
+                    </div>
+                    <div class="input-field col m6 s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="Auteur" type="text" class="validate">
+                        <label for="last_name">Auteur</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m3 s12">
+                        <i class="material-icons prefix">schedule</i>
+                        <label for="last_name">Date : </label>
+                    </div>
+                    <div class="input-field col m9 s12">
+                        <input type="date" class="datepicker">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">chat_bubble_outline</i>
+                        <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+                        <label for="textarea1">Contenu texte</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Submit</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

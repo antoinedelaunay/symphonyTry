@@ -1,0 +1,80 @@
+{#{% extends "::general.html.twig" %}#}
+{% extends "::generalMaterial.html.twig" %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block header %}
+    {% include 'FrontBundle:header:headerMaterial.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'FrontBundle:footer:footerMaterial.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/front/jsMaterial.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/front/konamiCode.js') }}"></script>
+{% endblock %}
+
+{% block link %}
+    <link rel="shortcut icon" type="image/x-icon" href="https://lc.cx/4WK8" />
+    <link rel="stylesheet" href="{{ asset('bundles/front/cssMaterial.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h3> article {{id}}</h3>
+        <a href="{{url('admin_edit' , {'id' : id})}}" class="waves-effect waves-light btn tooltipped" data-position="right" data-delay="50" data-tooltip="J'edite les article moi, j'suis un ouf">Admin EDIT</a>
+        
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://lc.cx/4siX">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">article {{id}}<i class="material-icons right">more_vert</i></span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">article {{id}}<i class="material-icons right">close</i></span>
+
+                <p>{{article.text}}</p>
+                <p>date de dernière édition : {{article.DatePublish|date("d/m/y")}}</p>
+                <p style="text-align:center"><img src="http://media.paperblog.fr/i/711/7111950/miaou-box-L-3PBOLa.jpeg"></p>
+            </div>
+        </div>
+
+
+        <ul class="collection">    
+            {% if comment|length <= 0 %} 
+            {% else %}
+                {% for comm in comment%}
+                    <li class="collection-item avatar">
+                        <img src="https://lc.cx/4sGt" alt="" class="circle">
+                        <span class="title">{{comm.getTitle()}}</span>
+                        <p>{{comm.getDescription()}}
+                        </p>
+                    </li>
+
+                {% endfor %}
+            {% endif %}
+
+        </ul>
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Ajoute un Commentaire</a>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal bottom-sheet">
+            <div class="modal-content">
+                <h4>Commentaire</h4>
+                <div class="row">
+                    {{form(form)}}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+    </div>
+    {% include 'FrontBundle:lol:lol.html.twig' %}
+{% endblock %}

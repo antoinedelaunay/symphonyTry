@@ -1,0 +1,41 @@
+{#{% extends "::general.html.twig" %}#}
+{% extends "::generalMaterial.html.twig" %}
+
+{% block title %}
+    admin Form Material
+{% endblock %}
+
+{% block header %}
+    {% include 'FrontBundle:header:headerMaterial.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'FrontBundle:footer:footerMaterial.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/front/jsMaterial.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/front/konamiCode.js') }}"></script>
+{% endblock %}
+
+{% block link %}
+    <link rel="shortcut icon" type="image/x-icon" href="https://lc.cx/4WK8" />
+    <link rel="stylesheet" href="{{ asset('bundles/front/cssMaterial.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://img0.gtsstatic.com/wallpapers/ac8562770ce5a8231e50548c298fd4b0_large.jpeg"></div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">Choisir un Commentaire a supprimer</h2>
+            {{form(form)}}
+        </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://img1.gtsstatic.com/wallpapers/7afe802b41d5456527257ddae6d08318_large.jpeg"></div>
+    </div>
+
+
+{% endblock %}

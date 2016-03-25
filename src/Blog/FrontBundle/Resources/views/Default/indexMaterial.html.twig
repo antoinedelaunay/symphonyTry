@@ -1,0 +1,106 @@
+{#{% extends "::general.html.twig" %}#}
+{% extends "::generalMaterial.html.twig" %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block header %}
+    {% include 'FrontBundle:header:headerMaterial.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'FrontBundle:footer:footerMaterial.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/front/jsMaterial.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/front/konamiCode.js') }}"></script>
+{% endblock %}
+
+{% block link %}
+    <link rel="shortcut icon" type="image/x-icon" href="https://lc.cx/4WK8" />
+    <link rel="stylesheet" href="{{ asset('bundles/front/cssMaterial.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h3> Bienvenue {{titre}}</h3>
+
+        {% if articles|length <= 0 %}
+            <p> le tableau est vide, on ne l'affiche pas </p>    
+        {% else %}
+            <table class="centered bordered responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th data-field="Titre">Titre</th>
+                        <th data-field="auteur">auteur</th> 
+                        <th data-field="date">date</th> 
+                        <th data-field="contenu_texte">contenu texte</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for position,article in articles %}
+                        <tr>
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%"> {{article.getTitre()|title}}</div></a></td>
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%"> {{article.getAuteur()|upper}}</div></a></td>
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%"> {{article.getDate()|capitalize}}</div></a></td>                
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%"> {{article.getContenu_texte()|escape('html')}}</div></a></td>
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%; text-align: center"> <i class="material-icons prefix">search</i></div></a></td>
+                        </tr>
+                        <!-- with modal 
+                        <tr>
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%"> {{article.getTitre()|title}} MODAL</div></a></td>
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%"> {{article.getAuteur()|upper}} MODAL</div></a></td>
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%"> {{article.getDate()|capitalize}} MODAL</div></a></td>                
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%"> {{article.getContenu_texte()|escape('html')}} MODAL</div></a></td>
+                            <td><a class="nolink" href="{{url('blog_view' , {'id' : article.getId()})}}"><div style="height:100%;width:100%; text-align: center"> <i class="material-icons prefix">search</i></div></a></td>
+                        </tr>
+                        -->
+                        
+                    {% else %}
+
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% endif %}
+        <!-- Page Content goes here -->
+        </br>
+        <div class="row">
+
+            <div class="col m6 s12">
+                Paphius quin etiam et Cornelius senatores, ambo venenorum artibus pravis se polluisse confessi, eodem pronuntiante Maximino sunt interfecti. pari sorte etiam procurator monetae extinctus est. Sericum enim et Asbolium supra dictos, quoniam cum hortaretur passim nominare, quos vellent, adiecta religione firmarat, nullum igni vel ferro se puniri iussurum, plumbi validis ictibus interemit. et post hoe flammis Campensem aruspicem dedit, in negotio eius nullo sacramento constrictus.
+                </br>
+                Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.
+                </br>
+                Advenit post multos Scudilo Scutariorum tribunus velamento subagrestis ingenii persuasionis opifex callidus. qui eum adulabili sermone seriis admixto solus omnium proficisci pellexit vultu adsimulato saepius replicando quod flagrantibus votis eum videre frater cuperet patruelis, siquid per inprudentiam gestum est remissurus ut mitis et clemens, participemque eum suae maiestatis adscisceret, futurum laborum quoque socium, quos Arctoae provinciae diu fessae poscebant.
+                Itaque verae amicitiae difficillime reperiuntur in iis qui in honoribus reque publica versantur; ubi enim istum invenias qui honorem amici anteponat suo? Quid? Haec ut omittam, quam graves, quam difficiles plerisque videntur calamitatum societates! Ad quas non est facile inventu qui descendant. Quamquam Ennius recte.
+            </div>
+
+            <div class="col m6 s12">
+                Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi. De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus, quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.
+                </br>
+                Ego vero sic intellego, Patres conscripti, nos hoc tempore in provinciis decernendis perpetuae pacis habere oportere rationem. Nam quis hoc non sentit omnia alia esse nobis vacua ab omni periculo atque etiam suspicione belli?
+            </div>
+            <div class="col m6 s12">
+                <img src="https://lc.cx/4WKh" alt="hello kitty" style="max-width:100%;max-height:100%;">
+            </div>
+
+        </div>
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal bottom-sheet">
+            <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

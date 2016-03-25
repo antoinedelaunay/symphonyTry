@@ -1,0 +1,56 @@
+{#{% extends "::general.html.twig" %}#}
+{% extends "::generalMaterial.html.twig" %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block header %}
+    {% include 'FrontBundle:header:headerMaterial.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'FrontBundle:footer:footerMaterial.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/front/jsMaterial.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/front/konamiCode.js') }}"></script>
+{% endblock %}
+
+{% block link %}
+    <link rel="shortcut icon" type="image/x-icon" href="https://lc.cx/4WK8" />
+    <link rel="stylesheet" href="{{ asset('bundles/front/cssMaterial.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+       {% if article|length <= 0 %}
+            <p> Pas de contenu a afficher </p>    
+        {% else %}
+            {% for posts in article %}
+
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://lc.cx/4m7e" >
+                                <span class="card-title" style="color:pink; font-size: 25px;font-weight: bold;">{{posts.getTitle()|title}}</span>
+                            </div>
+
+                            <div class="card-content">
+                                <p>{{posts.traitementTextPreview()}}</p>
+                            </div>
+                            <div class="card-action">
+                                <a class="nolink" href="{{url('blog_view' , {'id' : posts.getId()})}}">Liens vers cet article</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+{% endblock %}

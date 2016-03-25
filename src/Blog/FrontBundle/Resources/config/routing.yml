@@ -1,0 +1,78 @@
+#blog_index:
+#    path:     /
+#    defaults: { _controller: FrontBundle:Default:index }
+    
+blog_index:
+#blog_post_get:
+    path:     /
+    defaults: { _controller: FrontBundle:Post:getLastPosts }    
+    
+blog_view:
+    path:     /post/{id}
+    defaults: { _controller: FrontBundle:Post:view }
+
+blog_about:
+    path:     /about
+    defaults: { _controller: FrontBundle:Default:about }
+
+blog_form:
+    path:     /form
+    defaults: { _controller: FrontBundle:Default:form }
+
+blog_livre:
+    path:     /livre
+    defaults: { _controller: FrontBundle:Default:livre }
+
+blog_livre_add:
+    path:     /livre/add
+    defaults: { _controller: FrontBundle:Livre:add }
+    
+blog_livre_form:
+    path:     /livre/from
+    defaults: { _controller: FrontBundle:Livre:form }
+
+blog_livre_edit:
+    path:     /livre/edit/{id}
+    defaults: { _controller: FrontBundle:Livre:edit }
+
+blog_livre_delete:
+    path:     /livre/remove/{id}
+    defaults: { _controller: FrontBundle:Livre:delete }
+
+blog_categorie_add:
+    path:     /categorie/add/{libelle}
+    defaults: { _controller: FrontBundle:Categorie:add }
+
+blog_categorie_delete:
+    path:     /categorie/remove/{id}
+    defaults: { _controller: FrontBundle:Categorie:remove }
+
+blog_user_create:
+    path:     /user/create
+    defaults: { _controller: FrontBundle:User:add }
+
+blog_user_list:
+    path:     /user/list
+    defaults: { _controller: FrontBundle:User:list }
+
+blog_post_create:
+    path:     /post/create/{userid}
+    defaults: { _controller: FrontBundle:Post:add }
+
+blog_form_Test:
+    path:     /form/show
+    defaults: { _controller: FrontBundle:Comment:index }
+
+admin_edit:
+    path:     /admin/edit/{id} 
+    defaults: { _controller: FrontBundle:Admin:edit }
+
+admin_add:
+    path:     /admin/add
+    defaults: { _controller: FrontBundle:Admin:add }
+
+admin_delete:
+    path:     /admin/delete
+    defaults: { _controller: FrontBundle:Admin:delete }
+
+

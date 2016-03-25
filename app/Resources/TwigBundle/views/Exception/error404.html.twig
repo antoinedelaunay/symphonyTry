@@ -1,0 +1,41 @@
+{# app/Resources/TwigBundle/views/Exception/error404.html.twig #}
+{#{% extends "::general.html.twig" %}#}
+{% extends "::generalMaterial.html.twig" %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block header %}
+    {% include 'FrontBundle:header:headerMaterial.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'FrontBundle:footer:footerMaterial.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/front/jsMaterial.js') }}"></script>
+{% endblock %}
+
+{% block link %}
+    <link rel="shortcut icon" type="image/x-icon" href="https://lc.cx/4WK8" />
+    <link rel="stylesheet" href="{{ asset('bundles/front/cssMaterial.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h3 style="text-align:center">404</h3>
+        <div class="row">
+
+            <div class="col s12">
+
+                <blockquote>
+                    Tu t'es perdu mon bichon ?
+                </blockquote>
+
+            </div>
+            <img src="https://lc.cx/4WrX" alt="404" style="max-width:100%;max-height:100%;">
+        </div>
+    </div>
+{% endblock %}

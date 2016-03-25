@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Liste des livres
+{%endblock%}
+
+{% block stylesheets %}
+    <link href='{{asset('bundles/demo/css/eni.css')}}' rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    {% for livre in livres %}
+        <strong>{{livre.titre}} </strong> ({{ livre.categorie.libelle }})  <br>
+           
+    {% else %}
+        Pas de livre dans la base !
+    {% endfor %}
+
+    <br>
+    <a href="{{ path('livre_add') }}">Ajouter</a>
+{% endblock %}

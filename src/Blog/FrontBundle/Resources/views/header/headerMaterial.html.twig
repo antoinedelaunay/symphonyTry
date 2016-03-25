@@ -1,0 +1,28 @@
+{# empty Twig template #}
+
+
+<nav>
+    <div class="nav-wrapper">
+        
+        <a href="{{url('blog_index')}}" class="brand-logo"><img src="https://lc.cx/4WKh" alt="hello kitty" height="auto" width="42">
+        Nom du blog</a>
+        
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{url('admin_add')}}">Ajout Article</a></li>
+            <li><a href="{{url('admin_delete')}}">Supression Commentaire</a></li>
+            <li><a href="{{url('blog_form')}}">Formulaire test</a></li>
+            <!--<li><a href="{{url('blog_user_list')}}">Liste Utilisateur test</a></li>-->
+            <li><a href="{{url('blog_livre')}}">test material</a></li>
+            <li><a href="{{url('blog_about')}}">A Propos </a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="{{url('admin_add')}}">Ajout Article</a></li>
+            <li><a href="{{url('admin_delete')}}">Supression Commentaire</a></li>
+            <li><a href="{{url('blog_form')}}">Formulaire test</a></li>
+            <!--<li><a href="{{url('blog_user_list')}}">Liste Utilisateur test</a></li>-->
+            <li><a href="{{url('blog_livre')}}">test material</a></li>
+            <li><a href="{{url('blog_about')}}">A Propos </a></li>
+        </ul>
+    </div>
+</nav>
